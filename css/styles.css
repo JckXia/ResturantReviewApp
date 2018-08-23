@@ -214,16 +214,17 @@ nav h1 a {
 /* ====================== Restaurant Details ====================== */
 #restaurant-name{
 	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
- position:absolute;
+
 color:#ff901c;
+font-size:20pt;
   letter-spacing:3.5px;
-	left:40%;
+	text-align: center;
 
 }
 #restaurant-img{
 	position:relative;
   height:300px;
-	top:40px;
+	top:0px;
 	width:35%;
 	left:4%;
  border-radius:25px 0px 25px 0px;
@@ -235,7 +236,7 @@ color:#ff901c;
 	font-family:inherit;
 	letter-spacing:3.5px;
 	position:relative;
-	top:-286px;
+	top:-330px;
 	left:58%;
 	font-size:20px;
 	text-align: center;
@@ -250,7 +251,7 @@ color:#ff901c;
 	position: absolute;
 	font-size:14pt;
   left:62%;
-	margin-top: -93px;
+	margin-top: -112px;
 }
 
 #reviews-container h2{
@@ -276,6 +277,7 @@ color:#ff901c;
 	width: 85%;
 	left:5%;
 }
+
 #restaurant-hours,tr,td{
 	border:0.5px solid black;
 }
@@ -285,10 +287,39 @@ color:#ff901c;
 #restaurant-hours{
  width:40.43%;
 	position:relative;
-	top:-280px;
+	top:-325px;
 	left:58%;
 }
 
 #restaurant-container{
   margin-bottom:-100px;
+}
+
+@media screen and (max-width:500px){
+	#reviews-list li{
+    width:70%;
+		left:0%;
+	}
+	#restaurant-img{
+		left:19%;
+		width:60%;
+	}
+	#restaurant-cuisine{
+	  top:-15px;
+		left:10%;
+		width:75%;
+	}
+	#restaurant-address{
+		margin-top:-24px;
+		left:11%;
+	}
+	#restaurant-container{
+		margin-bottom:40px;
+	}
+	#restaurant-hours{
+		    height:0px;
+   top:10px;
+    width:60%;
+		left:20%;
+	}
 }
