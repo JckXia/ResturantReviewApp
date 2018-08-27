@@ -45,7 +45,7 @@ self.addEventListener('activate', function(event) {
       return Promise.all(
         cacheNames.filter(function(cacheName) {
           return cacheName.startsWith('rest-') &&
-                 cacheName != staticCacheName;
+                 cacheName != StaticCacheName;
         }).map(function(cacheName) {
           return caches.delete(cacheName);
         })
