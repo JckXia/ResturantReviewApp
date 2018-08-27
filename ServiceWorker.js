@@ -1,6 +1,7 @@
 
 
 //Here,we register a serviceWorker
+var StaticCacheName="rest-v1";
 
 if(navigator.serviceWorker){
 navigator.serviceWorker.register('/ServiceWorker.js').then(function(){
@@ -32,11 +33,28 @@ self.addEventListener('install',function(event){
      'restaurant.html'
   ];
   event.waitUntil(
-   caches.open('v1').then(function(cache){
+   caches.open(StaticCacheName).then(function(cache){
      return cache.addAll(dataToCache);
    })
  );
 });
+
+self.addEventListener('activate', function(event) {
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.filter(function(cacheName) {
+          return cacheName.startsWith('rest-') &&
+                 cacheName != staticCacheName;
+        }).map(function(cacheName) {
+          return caches.delete(cacheName);
+        })
+      );
+    })
+  );
+});
+
+
 
 self.addEventListener('fetch',function(event){
   event.respondWith(
