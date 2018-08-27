@@ -160,6 +160,7 @@ nav h1 a {
 	flex-wrap: wrap;
 }
 #restaurants-list li {
+	border-radius:25px 0px 25px 0px;
   background-color: #fff;
   border: 2px solid #ccc;
   font-family: Arial,sans-serif;
